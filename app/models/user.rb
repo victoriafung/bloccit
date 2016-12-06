@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
   def format_name
     if name
       formatted_name = []
-      user.name.split.each do |x|
-        formatted_name = x.capitalize
+      name.split.each do |x|
+        formatted_name.push(x.capitalize)
       end
-      self.user.name = formatted_name.join(" ")
+      name = formatted_name.join(" ")
     end
   end
 end
