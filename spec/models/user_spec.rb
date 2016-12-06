@@ -21,7 +21,10 @@ RSpec.describe User, type: :model do
     end
 
     it "should format the name" do
-      expect(user.name).to eq "Bloccit User"
+      user.name = "snow white"
+      user.save!
+
+      expect(user.reload.name).to eq "Snow White"
     end
   end
 
